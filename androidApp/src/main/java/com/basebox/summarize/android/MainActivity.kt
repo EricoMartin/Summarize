@@ -101,12 +101,15 @@ fun SummarizeScreen(viewModel: SummarizeViewModel) {
             }
         }
 
-        item {
-            Text(
-                "Summary:\n${summary.value}",
-                modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
-                textAlign = TextAlign.Center
-            )
+        if (summary.value.isNotEmpty()) {
+            item {
+                Text(
+                    "Summary:\n${summary.value}",
+                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            }
         }
     }
 }
